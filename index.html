@@ -305,7 +305,8 @@ const PAL0 = {
     s: '#151b29', S: '#28324a',
     1: '#e3b46a', 2: '#ea8a4b', 3: '#b65e3c', 4: '#f3d8a2', 5: '#c98a58', 6: '#8c4630', 7: '#77717c', 8: '#ddd3c6', 9: '#a3968a', 0: '#c7b6a1',
     X: '#e2364c', N: '#ff7f8e', A: '#7a1f33',
-    f: '#c56a46'
+    f: '#c56a46',
+    $: '#9c7a35', '%': '#c9a24a', '&': '#e6c46d', '*': '#f6e3a3'
 };
 const BAYER = [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]];
 const bay = (x, y) => BAYER[y & 3][x & 3] / 16;
@@ -735,25 +736,25 @@ Shell.addStrings({
 });
 const TXT = {
     es: {
-        caught: ['¡Alberto, deja ya el ordenador!', '¿Otro juego más?', 'Que se enfría el té…', '¿Has visto la hora que es?', 'Alberto. Alberto. ¡ALBERTO!', '¿Y la cena, qué?', 'Prometiste que era el último.', 'Ese teclado va a pedir vacaciones.'],
-        call: ['¿Albertooo?', '¿Albertooo?', '¿Alberto…?'], ok: ['Mmm… qué tranquilo estás.', '¿Todo bien por aquí?', 'Qué raro…', 'Bueno, vale.', '¿Mirando por la ventana?'], hug: ['Ay, qué tonto…', 'Anda, ven aquí.', 'Cinco minutitos y a cenar, ¿vale?'],
-        bye: ['Uno más. Pero rápido.', 'Ya hablaremos.', 'Te dejo, pesado.'], feint: '¡Falsa alarma!', near: '¡Por los pelos!', squash: '¡Bug aplastado!', pub: '¡Publicado!',
+        caught: ['¡Alberto, deja ya el ordenador!', '¿Otro juego más?', 'Que se enfría el té…', '¿Has visto la hora que es?', 'Alberto. Alberto. ¡ALBERTO!', '¿Y la cena, qué?', 'Prometiste que era el último.', 'Ese teclado va a pedir vacaciones.', '¡Llegamos tarde y tú aquí!', '¡Que llego tarde, Alberto!', '¿Dónde están las llaves? ¡Y tú con el ordenador!'],
+        call: ['¿Albertooo?', '¿Albertooo?', '¿Alberto…?', '¡Alberto, que llego tarde!', '¡Albertooo, rápido!', '¿Alberto? Voy corriendo…'], ok: ['Mmm… qué tranquilo estás.', '¿Todo bien por aquí?', 'Qué raro…', 'Bueno, vale.', '¿Mirando por la ventana?', 'No tengo tiempo, ¡llego tarde!', 'Vale, vale, luego hablamos.'], hug: ['Ay, qué tonto…', 'Anda, ven aquí.', 'Cinco minutitos y a cenar, ¿vale?', 'Un abrazo rápido, ¡que llego tarde!'],
+        bye: ['Uno más. Pero rápido.', 'Ya hablaremos.', 'Te dejo, pesado.', '¡Me voy corriendo, que llego tarde!', 'Cinco minutos y estoy lista. (Mentira.)', '¡Llego tardísimo! Adiós.'], feint: '¡Falsa alarma!', near: '¡Por los pelos!', squash: '¡Bug aplastado!', pub: '¡Publicado!',
         think: ['Uno más y paro.', 'Este es el último…', 'Solo un arreglito.', 'Cinco minutillos.', 'Ya casi lo tengo.', 'Total, no es tarde.'],
         names: ['Siesta Quest', 'Tupper Dash', 'Ctrl+Z', 'Sin Wifi', 'Calcetín Huido', '¿Dónde está Julia?', 'Batería Baja', 'Café Infinito', 'Tortilla Tetris', 'Bug Bunny', 'Último Último', 'Cinco Minutos'],
         code: ['// uno mas y paro', '// julia no mira', '// TODO: dormir', 'const cena = null;', 'if (julia.cerca) hide();', 'while (true) unoMas();', 'git commit -m "uno mas"', 'player.x += vx * dt;', '// esto funciona. no tocar', 'sleep = false;', 'score += 1; // bien', 'import { amor } from "julia";', 'bug.squash();', 'te.quiero = true;', 'function update(dt) {', '  if (hit(a, b)) boom();', 'return cafe + ganas;']
     },
     ca: {
-        caught: ['Alberto, deixa ja l’ordinador!', 'Un altre joc més?', 'Que es gela el té…', 'Has vist l’hora que és?', 'Alberto. Alberto. ALBERTO!', 'I el sopar, què?', 'Vas prometre que era l’últim.', 'Eixe teclat demanarà vacances.'],
-        call: ['Albertooo?', 'Albertooo?', 'Alberto…?'], ok: ['Mmm… què tranquil estàs.', 'Tot bé per ací?', 'Què estrany…', 'Bé, d’acord.', 'Mirant per la finestra?'], hug: ['Ai, quin tonto…', 'Au, vine ací.', 'Cinc minutets i a sopar, va?'],
-        bye: ['Un més. Però ràpid.', 'Ja en parlarem.', 'Et deixe, pesat.'], feint: 'Falsa alarma!', near: 'Per un pèl!', squash: 'Bug aixafat!', pub: 'Publicat!',
+        caught: ['Alberto, deixa ja l’ordinador!', 'Un altre joc més?', 'Que es gela el té…', 'Has vist l’hora que és?', 'Alberto. Alberto. ALBERTO!', 'I el sopar, què?', 'Vas prometre que era l’últim.', 'Eixe teclat demanarà vacances.', 'Arribem tard i tu ací!', 'Que arribe tard, Alberto!', 'On són les claus? I tu amb l’ordinador!'],
+        call: ['Albertooo?', 'Albertooo?', 'Alberto…?', 'Alberto, que arribe tard!', 'Albertooo, ràpid!', 'Alberto? Vaig corrent…'], ok: ['Mmm… què tranquil estàs.', 'Tot bé per ací?', 'Què estrany…', 'Bé, d’acord.', 'Mirant per la finestra?', 'No tinc temps, arribe tard!', 'Va, va, després parlem.'], hug: ['Ai, quin tonto…', 'Au, vine ací.', 'Cinc minutets i a sopar, va?', 'Una abraçada ràpida, que arribe tard!'],
+        bye: ['Un més. Però ràpid.', 'Ja en parlarem.', 'Et deixe, pesat.', 'Me’n vaig corrent, que arribe tard!', 'Cinc minuts i estic llesta. (Mentida.)', 'Arribe tardíssim! Adéu.'], feint: 'Falsa alarma!', near: 'Per un pèl!', squash: 'Bug aixafat!', pub: 'Publicat!',
         think: ['Un més i pare.', 'Aquest és l’últim…', 'Només un arranjament.', 'Cinc minutets.', 'Ja quasi el tinc.', 'Total, no és tard.'],
         names: ['Siesta Quest', 'Tupper Dash', 'Ctrl+Z', 'Sense Wifi', 'Mitjó Fugit', 'On és Júlia?', 'Bateria Baixa', 'Café Infinit', 'Truita Tetris', 'Bug Bunny', 'Últim Últim', 'Cinc Minuts'],
         code: ['// un mes i pare', '// julia no mira', '// TODO: dormir', 'const sopar = null;', 'if (julia.prop) hide();', 'while (true) unMes();', 'git commit -m "un mes"', 'player.x += vx * dt;', '// aixo funciona. no tocar', 'sleep = false;', 'score += 1; // be', 'import { amor } from "julia";', 'bug.squash();', 't.estime = true;', 'function update(dt) {', '  if (hit(a, b)) boom();', 'return cafe + ganes;']
     },
     en: {
-        caught: ['Alberto, put the computer down!', 'Another game?!', 'Your tea is getting cold…', 'Have you seen the time?', 'Alberto. Alberto. ALBERTO!', 'What about dinner?', 'You promised that was the last one.', 'That keyboard will ask for a holiday.'],
-        call: ['Albertooo?', 'Albertooo?', 'Alberto…?'], ok: ['Mmm… you’re very quiet.', 'Everything okay in here?', 'How odd…', 'Fine, then.', 'Staring out the window?'], hug: ['Aw, you silly…', 'Come here, you.', 'Five minutes and then dinner, okay?'],
-        bye: ['One more. But quick.', 'We’ll talk later.', 'Leaving you to it.'], feint: 'False alarm!', near: 'Close one!', squash: 'Bug squashed!', pub: 'Published!',
+        caught: ['Alberto, put the computer down!', 'Another game?!', 'Your tea is getting cold…', 'Have you seen the time?', 'Alberto. Alberto. ALBERTO!', 'What about dinner?', 'You promised that was the last one.', 'That keyboard will ask for a holiday.', 'We’re late and you’re still here!', 'I’m running late, Alberto!', 'Where are my keys?! And you’re on the computer!'],
+        call: ['Albertooo?', 'Albertooo?', 'Alberto…?', 'Alberto, I’m late!', 'Albertooo, hurry!', 'Alberto? Coming, coming…'], ok: ['Mmm… you’re very quiet.', 'Everything okay in here?', 'How odd…', 'Fine, then.', 'Staring out the window?', 'No time, I’m late!', 'Okay, okay, we’ll talk later.'], hug: ['Aw, you silly…', 'Come here, you.', 'Five minutes and then dinner, okay?', 'A quick hug, I’m late!'],
+        bye: ['One more. But quick.', 'We’ll talk later.', 'Leaving you to it.', 'Running out, I’m late!', 'Ready in five minutes. (Lie.)', 'I’m so late! Bye.'], feint: 'False alarm!', near: 'Close one!', squash: 'Bug squashed!', pub: 'Published!',
         think: ['One more and I stop.', 'This is the last one…', 'Just a tiny fix.', 'Five little minutes.', 'Almost there.', 'It’s not that late.'],
         names: ['Siesta Quest', 'Tupper Dash', 'Ctrl+Z', 'No Wifi', 'Lost Sock', 'Where’s Julia?', 'Low Battery', 'Infinite Coffee', 'Tortilla Tetris', 'Bug Bunny', 'Last Last One', 'Five Minutes'],
         code: ['// one more and stop', '// julia is not looking', '// TODO: sleep', 'const dinner = null;', 'if (julia.near) hide();', 'while (true) oneMore();', 'git commit -m "one more"', 'player.x += vx * dt;', '// works. do not touch', 'sleep = false;', 'score += 1; // nice', 'import { love } from "julia";', 'bug.squash();', 'i.love.you = true;', 'function update(dt) {', '  if (hit(a, b)) boom();', 'return coffee + hope;']
@@ -997,7 +998,8 @@ function skinLine(p, pts, th) {
         }
     }
 }
-function makeJulia(pose, face) {
+const HAIRB = { R: '$', r: '%', y: '&', Y: '*' };
+function makeJulia(pose, face, blonde) {
     const p = new Pix(28, 46), head = J_HEAD.slice();
     const E = (r, c, ch) => setC(head, r, c, ch);
     const eyesClosed = () => { for (const c of [6, 7, 12, 13]) {
@@ -1072,11 +1074,15 @@ function makeJulia(pose, face) {
         p.set(23, 13, 'p');
         p.set(24, 13, 'P');
     }
+    if (blonde)
+        p.d = p.d.map(c => HAIRB[c] || c);
     return p.outline('k');
 }
-const JUL = {};
-for (const [k, pose, face] of [['idle', 'idle', 'normal'], ['blink', 'idle', 'blink'], ['blow', 'blow', 'blow'], ['hips', 'hips', 'angry'], ['shout', 'hips', 'shout'], ['sus', 'idle', 'sus'], ['happy', 'wave', 'happy'], ['hips2', 'hips', 'sus'], ['happy2', 'idle', 'happy'], ['hug', 'idle', 'happy']])
+const JUL = {}, JULB = {};
+for (const [k, pose, face] of [['idle', 'idle', 'normal'], ['blink', 'idle', 'blink'], ['blow', 'blow', 'blow'], ['hips', 'hips', 'angry'], ['shout', 'hips', 'shout'], ['sus', 'idle', 'sus'], ['happy', 'wave', 'happy'], ['hips2', 'hips', 'sus'], ['happy2', 'idle', 'happy'], ['hug', 'idle', 'happy']]) {
     JUL[k] = makeJulia(pose, face);
+    JULB[k] = makeJulia(pose, face, true);
+}
 function makeSeated(head, arm) {
     const p = new Pix(46, 46), ox = 8;
     p.put(ox - 5, 13, CHAIR_SIDE);
@@ -1104,6 +1110,7 @@ const BUG = [[
         '..[...[..', '...[-[...', '..;;;;;..', '.;:;-;;;.', '[;;;-;:;[', '.;;-;;;;.', '[;:;-;;;[', '..;;;;;..', '...;;;...'
     ]].map(rows => { const p = new Pix(9, 9); p.put(0, 0, rows); return p; });
 const mkCart = body => { const p = new Pix(6, 7); p.put(0, 0, ['-----.', '-====-', '-=cc=-', '-=cc=-', '-====-', '-.--.-', '------'].map(r => r.replace(/c/g, body))); return p; };
+const KIT = { dx: 65, dy: 30 };
 const RW = 120, FLOOR = 92, ROOM_H = 138, SX = 32, SY = 57, DESK = 83;
 let BG0 = null, BG1 = null, BGM = false, BGB = null, rox = 0, ry = 0, panelY = 0, panelH = 100;
 const PKA = new Uint32Array(128), HAS = new Uint8Array(128);
@@ -1331,23 +1338,6 @@ function buildStatic() {
             px(x, y, cc('q'));
         }
     }
-    for (let y = 11; y <= 25; y++) {
-        const f = (y - 11) / 14, xl = Math.round(48 - f * 2), xr = Math.round(116 + f * 2);
-        for (let x = xl; x < xr; x++) {
-            const wave = Math.round(Math.sin((x - 48) * 0.62) * 1.5);
-            if (y > 22 + wave)
-                continue;
-            const stripe = Math.floor((x - 48) / 5) & 1;
-            px(x, y, cc(y < 13 ? 'T' : y > 20 + wave ? 't' : stripe ? 'M' : 'm'));
-        }
-    }
-    for (let x = 48; x < 118; x++) {
-        const wave = Math.round(Math.sin((x - 48) * 0.62) * 1.5);
-        px(x, 23 + wave, cc('k'));
-        px(x, 22 + wave, cc('t'));
-    }
-    rect(48, 10, 70, 1, 'k');
-    rect(48, 11, 70, 1, 'T');
     const dx = 2, dy = 45, dw = 26, dh = FLOOR - dy;
     for (let y = 0; y < dh; y++)
         for (let x = 0; x < dw; x++) {
@@ -1374,8 +1364,7 @@ function buildStatic() {
     ell(15, 33, 6, 6, 'G');
     for (const [a, b] of [[15, 28], [15, 38], [10, 33], [20, 33]])
         px(a, b, cc('k'));
-    ell(76, 122, 42, 12, (x, y, dx, dy) => { const r2 = dx * dx + dy * dy; return r2 > 0.86 ? 'q' : r2 > 0.72 ? '4' : r2 > 0.64 ? '6' : ((((x + y) & 3) === 0 && ((x - y) & 3) === 0) ? 'Y' : '3'); });
-    drumKitStatic();
+    ell(62, 122, 32, 12, (x, y, dx, dy) => { const r2 = dx * dx + dy * dy; return r2 > 0.86 ? 'q' : r2 > 0.72 ? '4' : r2 > 0.64 ? '6' : ((((x + y) & 3) === 0 && ((x - y) & 3) === 0) ? 'Y' : '3'); });
     for (let x = 57; x < 100; x++) {
         const f = (x - 57) % 4;
         rect(x, 86, 1, 8, f === 0 ? 'Q' : f === 3 ? 'I' : 'q');
@@ -1403,18 +1392,23 @@ function buildStatic() {
     }
     rect(63, DESK + 26, 6, 2, 'O', 0.5);
     rect(108, DESK + 26, 6, 2, 'O', 0.5);
-    rect(105, 127, 11, 11, 'n');
-    rect(106, 127, 9, 10, '5');
-    rect(106, 127, 9, 2, 'c');
-    rect(106, 135, 9, 2, '6');
-    rect(106, 128, 2, 8, '3', 0.5);
-    for (const [lx3, ly3, rx3, ry3] of [[108, 120, 4, 7], [114, 121, 4, 6], [110, 114, 3.5, 7], [112, 124, 5, 3.5], [106, 125, 4, 3]])
+    rect(44, 127, 11, 11, 'n');
+    rect(45, 127, 9, 10, '5');
+    rect(45, 127, 9, 2, 'c');
+    rect(45, 135, 9, 2, '6');
+    rect(45, 128, 2, 8, '3', 0.5);
+    for (const [lx3, ly3, rx3, ry3] of [[47, 120, 4, 7], [53, 121, 4, 6], [49, 114, 3.5, 7], [51, 124, 5, 3.5], [45, 125, 4, 3]])
         ell(lx3, ly3, rx3, ry3, (x, y, dx, dy) => (dx + dy < -0.2 ? 'M' : dy > 0.3 ? 't' : 'm'));
-    line(111, 126, 111, 112, 't');
-    line(111, 126, 106, 121, 't');
-    line(111, 126, 115, 121, 't');
+    line(50, 126, 50, 112, 't');
+    line(50, 126, 45, 121, 't');
+    line(50, 126, 54, 121, 't');
     canvasArt(112, 64, 14, 30, 0);
     canvasArt(106, 76, 10, 19, 1);
+    OX += KIT.dx;
+    OY += KIT.dy;
+    drumKitStatic();
+    OX -= KIT.dx;
+    OY -= KIT.dy;
     poang(1, 100);
     rect(62, 110, 50, 3, 'd', 0.4);
     rect(3, 137, 38, 2, 'O', 0.5);
@@ -1686,8 +1680,8 @@ function drawLights(time) {
         glow(12, 70, 22, 34, [255, 214, 140], 0.35 * S.J.vis, 0.4);
 }
 function drawKitDyn() {
-    OX = rox;
-    OY = ry;
+    OX = rox + KIT.dx;
+    OY = ry + KIT.dy;
     const h = S.kitHit;
     if (h[0] > 0)
         ell(40, 52, 8, 2.4, 'q', clamp(h[0]));
@@ -1708,7 +1702,7 @@ function drawJulia(time) {
     OY = ry;
     const hugStep = J.hugStep || 0;
     const jx = Math.round(2 - (1 - ease(J.vis)) * 31 + hugStep * 9), bob = Math.round(Math.sin(time * 3 + 1) * 0.5 + 0.2);
-    const fr = JUL[J.pose] || JUL.idle;
+    const fr = (J.blonde ? JULB : JUL)[J.pose] || (J.blonde ? JULB : JUL).idle;
     CLIP = hugStep > 0.02 ? null : [OX + 2, OY + 30, OX + 29, OY + 100];
     blit(fr, jx, 52 + bob, false);
     CLIP = null;
@@ -1780,10 +1774,14 @@ function drawAlberto(time) {
             case 'window':
                 sp = ALB.window;
                 break;
-            case 'drums':
-                sp = ((time * 7) | 0) & 1 ? ALB.drum1 : ALB.drum0;
-                y += (((time * 7) | 0) & 1) ? -1 : 0;
-                break;
+            case 'drums': {
+                blit(ALB.chair, SX, SY + 11, false);
+                const b = ((time * 7) | 0) & 1, sx = 78;
+                blit(ALB.stand[b], sx, 74 + (b ? -1 : 0), false);
+                line(sx + 14, 94 + (b ? -4 : 0), sx + 21, 90 + (b ? 3 : -3), 'Y');
+                line(sx + 14, 96 + (b ? 3 : -4), sx + 21, 92 + (b ? -3 : 3), 'Y');
+                return;
+            }
             default:
                 sp = ALB.type0;
                 y += Math.round(Math.sin(time * 1.7) * 0.5);
@@ -1955,7 +1953,7 @@ const holds = new Set();
 let rJ = Math.random, rB = Math.random, best = Shell.store.get('unomas:best', 0), last = performance.now(), simTime = 0;
 const lerp = Shell.lerp;
 const durOf = n => 4.4 + 0.8 * (n - 1);
-const warnOf = n => Math.max(0.62, 1.5 - 0.07 * (n - 1));
+const warnOf = n => Math.max(0.5, 1.15 - 0.06 * (n - 1));
 const peekOf = (n, r) => 0.95 + 0.7 * r + Math.min(0.35, 0.03 * n);
 const gapOf = (n, r) => lerp(7.0, 3.0, Math.min(1, (n - 1) / 12)) * (0.75 + 0.5 * r);
 const randOf = a => a[Math.floor(Math.random() * a.length)];
@@ -2008,10 +2006,10 @@ function keyPress() {
     }
 }
 function planVisit(first) {
-    const n = S.n, r = [rJ(), rJ(), rJ(), rJ(), rJ(), rJ()];
+    const n = S.n, r = [rJ(), rJ(), rJ(), rJ(), rJ(), rJ(), rJ()];
     const feintP = n < 2 ? 0 : Math.min(0.28, 0.06 + 0.02 * n), silentP = n < 4 ? 0 : Math.min(0.38, 0.07 * (n - 3)), dblP = n < 3 ? 0 : Math.min(0.35, 0.04 * (n - 2));
     const feint = r[1] < feintP, silent = !feint && r[1] < feintP + silentP;
-    S.J.plan = { warn: silent ? 0.62 : warnOf(n) * (0.85 + 0.3 * r[3]), peek: peekOf(n, r[4]), silent, feint, dbl: !feint && r[2] < dblP, phrase: r[5] };
+    S.J.plan = { warn: silent ? 0.5 : warnOf(n) * (0.85 + 0.3 * r[3]), peek: peekOf(n, r[4]), silent, feint, dbl: !feint && r[2] < dblP, phrase: r[5], blonde: r[6] < 0.5 };
     S.J.next = first ? 4.5 + r[0] * 2.5 : gapOf(n, r[0]) + S.peace;
     S.peace = 0;
     S.J.dbl = false;
@@ -2036,6 +2034,7 @@ function startWarn() {
     J.sinceRel = 9;
     J.called = false;
     J.ok = false;
+    J.blonde = !!(J.plan && J.plan.blonde);
     if (!S.typing && S.A.pose !== 'shock')
         pickDisguise();
 }
@@ -2190,7 +2189,7 @@ function updateJulia(dt) {
                 if (plan && plan.dbl && !J.dbl && !J.caughtDbl && S.state === 'play') {
                     J.dbl = true;
                     const r = rJ();
-                    J.plan = { warn: 0.5, peek: 0.8 + r * 0.4, silent: false, feint: false, dbl: false };
+                    J.plan = { warn: 0.42, peek: 0.8 + r * 0.4, silent: false, feint: false, dbl: false, blonde: plan.blonde };
                     J.next = 0.45 + rJ() * 0.4;
                 }
                 else
