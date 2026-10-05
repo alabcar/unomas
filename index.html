@@ -179,7 +179,7 @@ const Shell = (() => {
         return s;
     }
     function applyI18n() {
-        document.documentElement.lang = lang;
+        document.documentElement.lang = lang === 'ca' ? 'ca-ES-valencia' : lang;
         document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
         document.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
     }
@@ -255,7 +255,7 @@ const Shell = (() => {
         en: { copied: 'Copied!', sound: 'Sound', language: 'Language', home: 'All games' }
     });
     function wireControls(muteBtn, langBtn, onLang) {
-        const paint = () => { muteBtn.classList.toggle('off', muted); muteBtn.setAttribute('aria-pressed', String(!muted)); langBtn.textContent = lang.toUpperCase(); };
+        const paint = () => { muteBtn.classList.toggle('off', muted); muteBtn.setAttribute('aria-pressed', String(!muted)); langBtn.textContent = lang === 'ca' ? 'VA' : lang.toUpperCase(); };
         muteBtn.addEventListener('click', () => { toggleMute(); ensureAudio(); paint(); });
         langBtn.addEventListener('click', () => { toggleLang(); paint(); if (onLang)
             onLang(); });
@@ -727,9 +727,9 @@ Shell.addStrings({
     es: { tagline: 'Mantén pulsado para programar. Suelta cuando Julia se acerque.', tagline2: 'Toca a Julia en la puerta para abrazarla. Aplasta los bugs con un toque.', best: 'Récord', streak: 'Racha', play: 'Jugar', daily: 'Reto diario #{n}', dailyDone: 'Hoy: {s}', retry: 'Otra vez', share: 'Compartir', menu: 'Menú',
         free: 'Libre', dailyMode: 'Diario #{n}', newBest: 'Nuevo récord.', toBest: 'Te faltaron {d} para tu récord ({b}).', official: 'Intento oficial del día. Racha: {s}.', practice: 'Práctica: cuenta solo el primer intento del día.',
         g1: '{n} juego', gN: '{n} juegos', heartB: '{n} de corazón', whyDawn: 'Amanece. Duerme algo, anda.', q1: 'Hoy ha dado pereza, ¿eh?', q2: 'No está mal para una noche.', q3: 'Esto ya es una adicción.', q4: 'Eres una máquina… y Julia lo sabe.', whyCinema: 'Julia se ha ido al cine sola.', hold: 'MANTÉN PULSADO', night: 'Noche' },
-    ca: { tagline: 'Mantén premut per programar. Deixa anar quan Júlia s’acoste.', tagline2: 'Toca Júlia a la porta per abraçar-la. Aplasta els bugs amb un toc.', best: 'Rècord', streak: 'Ratxa', play: 'Juga', daily: 'Repte diari #{n}', dailyDone: 'Avui: {s}', retry: 'Una altra', share: 'Comparteix', menu: 'Menú',
-        free: 'Lliure', dailyMode: 'Diari #{n}', newBest: 'Nou rècord.', toBest: 'Et van faltar {d} per al teu rècord ({b}).', official: 'Intent oficial del dia. Ratxa: {s}.', practice: 'Pràctica: només compta el primer intent del dia.',
-        g1: '{n} joc', gN: '{n} jocs', heartB: '{n} de cor', whyDawn: 'Fa de dia. Dorm una mica, va.', q1: 'Hui ha tocat mandra, eh?', q2: 'No està gens mal per a una nit.', q3: 'Açò ja és una addicció.', q4: 'Eres una màquina… i Júlia ho sap.', whyCinema: 'Júlia se n’ha anat al cinema sola.', hold: 'MANTÉN PREMUT', night: 'Nit' },
+    ca: { tagline: 'Mantín premut per a programar. Deixa anar quan Júlia s’acoste.', tagline2: 'Toca Júlia a la porta per abraçar-la. Aixafa els bugs amb un toc.', best: 'Rècord', streak: 'Ratxa', play: 'Juga', daily: 'Repte diari #{n}', dailyDone: 'Avui: {s}', retry: 'Una altra', share: 'Compartix', menu: 'Menú',
+        free: 'Lliure', dailyMode: 'Diari #{n}', newBest: 'Nou rècord.', toBest: 'Et faltaren {d} per al teu rècord ({b}).', official: 'Intent oficial del dia. Ratxa: {s}.', practice: 'Pràctica: només compta el primer intent del dia.',
+        g1: '{n} joc', gN: '{n} jocs', heartB: '{n} de cor', whyDawn: 'Fa de dia. Dorm una mica, va.', q1: 'Hui ha tocat mandra, eh?', q2: 'No està gens mal per a una nit.', q3: 'Açò ja és una addicció.', q4: 'Eres una màquina… i Júlia ho sap.', whyCinema: 'Júlia se n’ha anat al cinema sola.', hold: 'MANTÍN PREMUT', night: 'Nit' },
     en: { tagline: 'Hold to code. Let go when Julia comes by.', tagline2: 'Tap Julia at the door for a hug. Tap bugs to squash them.', best: 'Best', streak: 'Streak', play: 'Play', daily: 'Daily #{n}', dailyDone: 'Today: {s}', retry: 'Again', share: 'Share', menu: 'Menu',
         free: 'Free', dailyMode: 'Daily #{n}', newBest: 'New best.', toBest: '{d} short of your best ({b}).', official: 'Official run for today. Streak: {s}.', practice: 'Practice: only the first run of the day counts.',
         g1: '{n} game', gN: '{n} games', heartB: '{n} from the heart', whyDawn: 'Dawn breaks. Get some sleep.', q1: 'Feeling lazy tonight, huh?', q2: 'Not bad for one night.', q3: 'This is an addiction now.', q4: 'You are a machine… and Julia knows it.', whyCinema: 'Julia went to the cinema alone.', hold: 'HOLD TO CODE', night: 'Night' }
@@ -747,9 +747,9 @@ const TXT = {
         caught: ['Alberto, deixa ja l’ordinador!', 'Un altre joc més?', 'Que es gela el té…', 'Has vist l’hora que és?', 'Alberto. Alberto. ALBERTO!', 'I el sopar, què?', 'Vas prometre que era l’últim.', 'Eixe teclat demanarà vacances.', 'Arribem tard i tu ací!', 'Que arribe tard, Alberto!', 'On són les claus? I tu amb l’ordinador!'],
         call: ['Albertooo?', 'Albertooo?', 'Alberto…?', 'Alberto, que arribe tard!', 'Albertooo, ràpid!', 'Alberto? Vaig corrent…'], ok: ['Mmm… què tranquil estàs.', 'Tot bé per ací?', 'Què estrany…', 'Bé, d’acord.', 'Mirant per la finestra?', 'No tinc temps, arribe tard!', 'Va, va, després parlem.'], hug: ['Ai, quin tonto…', 'Au, vine ací.', 'Cinc minutets i a sopar, va?', 'Una abraçada ràpida, que arribe tard!'],
         bye: ['Un més. Però ràpid.', 'Ja en parlarem.', 'Et deixe, pesat.', 'Me’n vaig corrent, que arribe tard!', 'Cinc minuts i estic llesta. (Mentida.)', 'Arribe tardíssim! Adéu.'], feint: 'Falsa alarma!', near: 'Per un pèl!', squash: 'Bug aixafat!', pub: 'Publicat!',
-        think: ['Un més i pare.', 'Aquest és l’últim…', 'Només un arranjament.', 'Cinc minutets.', 'Ja quasi el tinc.', 'Total, no és tard.'],
+        think: ['Un més i pare.', 'Este és l’últim…', 'Només un arranjament.', 'Cinc minutets.', 'Ja quasi el tinc.', 'Total, no és tard.'],
         names: ['Siesta Quest', 'Tupper Dash', 'Ctrl+Z', 'Sense Wifi', 'Mitjó Fugit', 'On és Júlia?', 'Bateria Baixa', 'Café Infinit', 'Truita Tetris', 'Bug Bunny', 'Últim Últim', 'Cinc Minuts'],
-        code: ['// un mes i pare', '// julia no mira', '// TODO: dormir', 'const sopar = null;', 'if (julia.prop) hide();', 'while (true) unMes();', 'git commit -m "un mes"', 'player.x += vx * dt;', '// aixo funciona. no tocar', 'sleep = false;', 'score += 1; // be', 'import { amor } from "julia";', 'bug.squash();', 't.estime = true;', 'function update(dt) {', '  if (hit(a, b)) boom();', 'return cafe + ganes;']
+        code: ['// un mes i pare', '// julia no mira', '// TODO: dormir', 'const sopar = null;', 'if (julia.prop) hide();', 'while (true) unMes();', 'git commit -m "un mes"', 'player.x += vx * dt;', '// aço funciona. no tocar', 'sleep = false;', 'score += 1; // be', 'import { amor } from "julia";', 'bug.squash();', 't.estime = true;', 'function update(dt) {', '  if (hit(a, b)) boom();', 'return cafe + ganes;']
     },
     en: {
         caught: ['Alberto, put the computer down!', 'Another game?!', 'Your tea is getting cold…', 'Have you seen the time?', 'Alberto. Alberto. ALBERTO!', 'What about dinner?', 'You promised that was the last one.', 'That keyboard will ask for a holiday.', 'We’re late and you’re still here!', 'I’m running late, Alberto!', 'Where are my keys?! And you’re on the computer!'],
