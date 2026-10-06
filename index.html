@@ -2339,6 +2339,7 @@ function publish() {
     S.think = { text: randOf(tx().think), t: 0, dur: 1.5, who: 'A' };
 }
 function start(m) {
+    Shell.track('unomas');
     Shell.ensureAudio();
     holds.clear();
     S.mode = m;
