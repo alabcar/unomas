@@ -1,7 +1,7 @@
 {
   "name": "Uno más",
   "short_name": "Uno más",
-  "description": "Programa sin parar… hasta que Julia se asoma por la puerta. Suelta a tiempo y disimula.",
+  "description": "Programa sin parar… hasta que ella se asoma por la puerta. Suelta a tiempo y disimula.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -1,3 +1,3 @@
 # Uno más
 
-Programa sin parar… hasta que Julia se asoma por la puerta. Suelta a tiempo y disimula.
+Programa sin parar… hasta que ella se asoma por la puerta. Suelta a tiempo y disimula.
